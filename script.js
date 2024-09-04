@@ -1,5 +1,5 @@
-// 'use strict';
-// /*
+'use strict';
+/*
 // function logger() {
 //     console.log("My name is Jonas");
 // }
@@ -284,7 +284,7 @@
 //         // // Challange:
 //         // //"Jonas is a 46-year old teacher, and he has a drivers license."
 //         // console.log(jonas.getSummary());
-// */
+//
 
 
 // const mark = {
@@ -321,4 +321,145 @@
 // } else {
 //     console.log("They have the same BMI.")
 // }
+
+
+
+
+// -------------FOR LOOPS----------------
+
+
+
+
+
+
+// console.log("Lifting weights repetition 1")
+// console.log("Lifting weights repetition 2")
+
+// for (let rep = 1; rep <= 10; rep++) {
+//     console.log(`Lifting weights repetition $() `)
+// }
+
+const jonas = [
+    "Jonas",
+    "Schmedtmann",
+    2037 - 1991,
+    "teacher",
+    ["Michael", "Peter", "Steven"],
+    true
+];
+
+
+const types = [];
+
+for (let i = 0; i < jonas.length; i++) {
+    //Reading from jonas array
+    console.log(jonas[i], typeof jonas[i]);
+    //filling types array
+    //types[i] = typeof jonas[i];
+    types.push(typeof jonas[i]);
+}
+
+
+
+console.log(types);
+
+const years = [1991, 2007, 1969, 2020];
+
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+    ages.push(2037 - years[i]);
+
+}
+console.log(ages)
+//continue and break
+console.log("------ONLY STRINGS--------")
+for (let i = 0; i < jonas.length; i++) {
+    if (typeof jonas[i] !== "string") continue;
+    console.log(jonas[i], typeof jonas[i]);
+}
+
+console.log("------ BREAK NUMBER--------")
+
+for (let i = 0; i < jonas.length; i++) {
+    if (typeof jonas[i] === "number") break;
+    console.log(jonas[i], typeof jonas[i]);
+
+}
+*/
+
+
+//LOOPING BACKWARDS AND LOOPS IN LOOPS. 4,3,2,1
+
+const jonas = [
+    "Jonas",
+    "Schmedtmann",
+    2037 - 1991,
+    "teacher",
+    ["Michael", "Peter", "Steven"]
+]
+
+
+for (let i = jonas.length - 1; i >= 0; i--) {
+    console.log(i, jonas[i]);
+
+}
+// Nested loops
+
+for (let excercise = 1; excercise < 4; excercise++) {
+    console.log(`---------Starting excercise ${excercise}`);
+    for (let rep = 1; rep < 6; rep++) {
+        console.log(`Exercise ${excercise}: Lifting weight repetition ${rep}`)
+    }
+}
+
+
+//WHILE LOOP
+
+// for (let rep = 1; rep <= 10; rep++) {
+//     console.log(`Lifting weights repetiton ${rep}`);
+// }
+let rep = 1;
+while (rep <= 10) {
+    console.log(`WHILE:Lifting weights repetiton ${rep}`);
+    rep++;
+}
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+
+
+while (dice !== 6) {
+    console.log(`You rolled a ${dice}`);
+    dice = Math.trunc(Math.random() * 6) + 1;
+
+}
+
+
+const calcTip = function (bill) {
+    return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+}
+
+const calcAverage = function (arr) {
+    let x = 0
+    for (let i = 0; i < arr.length; i++) {
+        x += arr[i]
+    }
+    const result = x / arr.length
+    return result
+}
+console.log(calcAverage([60, 60, 3]))
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52.
+
+];
+
+const tips = [];
+
+const totals = [];
+
+for (let i = 0; i <= bills.length; i++) {
+    const tip = calcTip(bills[i])
+    tips.push(tip)
+    totals.push(tip + bills[i])
+
+}
 
